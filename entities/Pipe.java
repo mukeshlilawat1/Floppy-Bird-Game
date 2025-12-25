@@ -1,26 +1,28 @@
 package entities;
 
 import java.awt.Graphics;
-import java.awt.*;
+import java.awt.Image;
 
 import engine.Config;
 
 public class Pipe extends Entity {
 
     private boolean passed;
+    private final boolean top; // 🔥 NEW
 
-    public Pipe(Image sprite, int x, int y) {
+    public Pipe(Image sprite, int x, int y, boolean top) {
         this.sprite = sprite;
         this.x = x;
         this.y = y;
-        this.width = Config.pipe_width;
-        this.height = Config.pipe_height;
+        this.top = top;
+        this.width = Config.PIPE_WIDTH;
+        this.height = Config.PIPE_HEIGHT;
         this.passed = false;
     }
 
     @Override
     public void update() {
-        x += Config.pipe_speed;
+        x += Config.PIPE_SPEED;
     }
 
     @Override
@@ -40,4 +42,7 @@ public class Pipe extends Entity {
         return x + width < 0;
     }
 
+    public boolean isTop() {
+        return top;
+    }
 }

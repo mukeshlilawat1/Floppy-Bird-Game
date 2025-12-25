@@ -1,26 +1,35 @@
 package engine;
 
 public final class Config {
-    //Board
-    public static final int Board_width = 360;
-    public static final int Board_Height = 640;
 
-    // bird physics
-    public static final int Gravity = 1;
-    public static final int Flab_force = -9;
+    // ================== BOARD ==================
+    public static final int BOARD_WIDTH = 360;
+    public static final int BOARD_HEIGHT = 640;
 
-    // pipes
-    public static final int pipe_width = 64;
-    public static final int pipe_height = 512;
-    public static final int pipe_gap = 150;
-    public static final int pipe_speed = -4;
-    public static final long pipe_interval = 1500; //ms
+    // ================== GAME LOOP ==================
+    public static final int FPS = 60;
 
-    // Game
-    public static final int Ground_Limit = Board_Height;
-    public static final int score_font_size = 32;
+    // ================== BIRD PHYSICS ==================
+    public static final int GRAVITY = 1;
+    public static final int FLAP_FORCE = -9;
+
+    // ================== PIPES ==================
+    public static final int PIPE_WIDTH = 64;
+    public static final int PIPE_HEIGHT = 420;
+    public static final int PIPE_GAP = 150;
+    public static final int PIPE_SPEED = -4;
+    public static final long PIPE_INTERVAL = 1500; // ms
+
+    // ================== GROUND ==================
+    // Background image me land already drawn hai
+    // Isliye bottom ka kuch hissa playable nahi hona chahiye
+    public static final int GROUND_HEIGHT = 100;   // adjust if needed
+    public static final int GROUND_LIMIT = BOARD_HEIGHT - GROUND_HEIGHT;
+
+    // ================== UI ==================
+    public static final int SCORE_FONT_SIZE = 32;
 
     private Config() {
-
+        // prevent instantiation
     }
 }
